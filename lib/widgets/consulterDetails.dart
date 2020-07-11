@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ConsulterDetails extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class ConsulterDetails extends StatelessWidget {
         children: [
           Container(
             padding: EdgeInsets.only(top: 5),
-            margin: EdgeInsets.only(top: 40 ,  bottom: 50),
+            margin: EdgeInsets.only(top: 40, bottom: 50),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20), color: Colors.white),
             child: Column(
@@ -119,87 +120,96 @@ class ConsulterDetails extends StatelessWidget {
 
                 //// تماس ها
                 Divider(),
-                Container(
-                  height: 50,
-                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 8),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.green),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Icon(
-                        Icons.call,
-                        size: 28,
-                        color: Colors.white,
-                      ),
-                      Text("تماس با دفتر",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.white,
-                          )),
-                      Text("05135242166",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ))
-                    ],
+                InkWell(
+                  onTap: () => _callnumber("09154127181"),
+                  child: Container(
+                    height: 50,
+                    margin: EdgeInsets.symmetric(horizontal: 25, vertical: 8),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.green),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Icon(
+                          Icons.call,
+                          size: 28,
+                          color: Colors.white,
+                        ),
+                        Text("تماس با دفتر",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            )),
+                        Text("05135242166",
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ))
+                      ],
+                    ),
                   ),
                 ),
 
-                Container(
-                  height: 50,
-                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 8),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.green),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Icon(
-                        Icons.call,
-                        size: 28,
-                        color: Colors.white,
-                      ),
-                      Text("تماس با دفتر",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.white,
-                          )),
-                      Text("05135242166",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ))
-                    ],
+                InkWell(
+                  onTap: () => _callnumber("09215204600"),
+                  child: Container(
+                    height: 50,
+                    margin: EdgeInsets.symmetric(horizontal: 25, vertical: 8),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.green),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Icon(
+                          Icons.call,
+                          size: 28,
+                          color: Colors.white,
+                        ),
+                        Text("تماس با دفتر",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            )),
+                        Text("05135242166",
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ))
+                      ],
+                    ),
                   ),
                 ),
 
-                Container(
-                  height: 50,
-                  margin: EdgeInsets.symmetric(horizontal: 25, vertical: 8),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      color: Colors.green),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Icon(
-                        Icons.phone_android,
-                        size: 28,
-                        color: Colors.white,
-                      ),
-                      Text("تماس با موبایل",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.white,
-                          )),
-                      Text("09154127181",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                          ))
-                    ],
+                InkWell(
+                  onTap: () => _callnumber("09215204600"),
+                  child: Container(
+                    height: 50,
+                    margin: EdgeInsets.symmetric(horizontal: 25, vertical: 8),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: Colors.green),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Icon(
+                          Icons.phone_android,
+                          size: 28,
+                          color: Colors.white,
+                        ),
+                        Text("تماس با موبایل",
+                            style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                            )),
+                        Text("09154127181",
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ))
+                      ],
+                    ),
                   ),
                 ),
 
@@ -231,4 +241,8 @@ class ConsulterDetails extends StatelessWidget {
       ),
     );
   }
+}
+
+_callnumber(String number) async {
+  await launch("tel:$number");
 }
