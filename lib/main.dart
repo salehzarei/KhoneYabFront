@@ -20,7 +20,7 @@ void main() {
                         fontWeight: FontWeight.w700,
                         color: Colors.black))),
             debugShowCheckedModeBanner: false,
-            initialRoute: 'RequestDetails',
+            initialRoute: '/',
             routes: {
               '/': (context) => LoginPage(),
               'homepage': (context) => HomePage(),
