@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:khoneyab/utiles/requestOptions.dart';
 
 class RequestOptionItem extends StatelessWidget {
   final String optionTitle;
+  final int optionIndex;
 
-  RequestOptionItem({this.optionTitle});
+  RequestOptionItem({this.optionTitle , this.optionIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,10 @@ class RequestOptionItem extends StatelessWidget {
                                           topRight: Radius.circular(25))),
                                   height:
                                       MediaQuery.of(context).size.height * 0.25,
-                                      child: Center(child: Text("گزینه ها")),
+                                  child: Center(
+                                      child: RequestOptionList(
+                                    optionindex: optionIndex,
+                                  )),
                                 )),
                         child: Text(
                           'انتخاب',
