@@ -11,9 +11,6 @@
 class ApartemanRentOptionModel {
     ApartemanRentOptionModel({
         this.location,
-        this.eleveator,
-        this.storeroom,
-        this.parking,
         this.metric,
         this.mortgagePrice,
         this.rentPrice,
@@ -21,12 +18,12 @@ class ApartemanRentOptionModel {
         this.buildFloor,
         this.buildroom,
         this.persons,
+        this.eleveator,
+        this.storeroom,
+        this.parking,
     });
 
     List<Location> location;
-    bool eleveator;
-    bool storeroom;
-    bool parking;
     List<Metric> metric;
     List<MortgagePrice> mortgagePrice;
     List<RentPrice> rentPrice;
@@ -34,12 +31,12 @@ class ApartemanRentOptionModel {
     List<BuildFloor> buildFloor;
     List<Buildroom> buildroom;
     List<Person> persons;
+    bool eleveator;
+    bool storeroom;
+    bool parking;
 
     factory ApartemanRentOptionModel.fromJson(Map<String, dynamic> json) => ApartemanRentOptionModel(
         location: List<Location>.from(json["location"].map((x) => Location.fromJson(x))),
-        eleveator: json["eleveator"],
-        storeroom: json["storeroom"],
-        parking: json["parking"],
         metric: List<Metric>.from(json["metric"].map((x) => Metric.fromJson(x))),
         mortgagePrice: List<MortgagePrice>.from(json["mortgagePrice"].map((x) => MortgagePrice.fromJson(x))),
         rentPrice: List<RentPrice>.from(json["rentPrice"].map((x) => RentPrice.fromJson(x))),
@@ -47,13 +44,13 @@ class ApartemanRentOptionModel {
         buildFloor: List<BuildFloor>.from(json["buildFloor"].map((x) => BuildFloor.fromJson(x))),
         buildroom: List<Buildroom>.from(json["buildroom"].map((x) => Buildroom.fromJson(x))),
         persons: List<Person>.from(json["persons"].map((x) => Person.fromJson(x))),
+         eleveator: json["eleveator"],
+        storeroom: json["storeroom"],
+        parking: json["parking"],
     );
 
     Map<String, dynamic> toJson() => {
         "location": List<dynamic>.from(location.map((x) => x.toJson())),
-        "eleveator": eleveator,
-        "storeroom": storeroom,
-        "parking": parking,
         "metric": List<dynamic>.from(metric.map((x) => x.toJson())),
         "mortgagePrice": List<dynamic>.from(mortgagePrice.map((x) => x.toJson())),
         "rentPrice": List<dynamic>.from(rentPrice.map((x) => x.toJson())),
@@ -61,6 +58,9 @@ class ApartemanRentOptionModel {
         "buildFloor": List<dynamic>.from(buildFloor.map((x) => x.toJson())),
         "buildroom": List<dynamic>.from(buildroom.map((x) => x.toJson())),
         "persons": List<dynamic>.from(persons.map((x) => x.toJson())),
+         "eleveator": eleveator,
+        "storeroom": storeroom,
+        "parking": parking,
     };
 }
 
@@ -184,23 +184,23 @@ class MortgagePrice {
     MortgagePrice({
         this.mortgagePriceId,
         this.mortgagePriceTitle,
-        this.mortgagePriceValuen,
+        this.mortgagePriceValue,
     });
 
     String mortgagePriceId;
     String mortgagePriceTitle;
-    int mortgagePriceValuen;
+    int mortgagePriceValue;
 
     factory MortgagePrice.fromJson(Map<String, dynamic> json) => MortgagePrice(
         mortgagePriceId: json["mortgagePriceID"],
         mortgagePriceTitle: json["mortgagePriceTitle"],
-        mortgagePriceValuen: json["mortgagePriceValuen"],
+        mortgagePriceValue: json["mortgagePriceValuen"],
     );
 
     Map<String, dynamic> toJson() => {
         "mortgagePriceID": mortgagePriceId,
         "mortgagePriceTitle": mortgagePriceTitle,
-        "mortgagePriceValuen": mortgagePriceValuen,
+        "mortgagePriceValuen": mortgagePriceValue,
     };
 }
 

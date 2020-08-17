@@ -33,11 +33,13 @@ class AddRequestDetails extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline3,
                   ),
                 ),
-                Expanded(flex: 8, child: RequestOptions()),
+                Expanded(flex: 8, child: Container()
+              //  RequestOptions()
+                ),
                 Align(
                   alignment: Alignment.topLeft,
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: ()=>Navigator.pushNamed(context, 'checkRequestPage'),
                     color: Theme.of(context).buttonColor,
                     child: Text(
                       "مرحله بعدی",
@@ -45,7 +47,7 @@ class AddRequestDetails extends StatelessWidget {
                     ),
                   ),
                 ),
-                Expanded(flex: 2, child: Container())
+                Expanded(flex: 1, child: Container())
               ],
             ),
           ),
@@ -68,35 +70,35 @@ class RequestOptions extends StatelessWidget {
         ),
         RequestOptionItem(
           optionTitle: 'ودیعه مورد نظر',
-          optionIndex: 0,
+          optionIndex: 2,
         ),
         RequestOptionItem(
           optionTitle: 'اجاره مورد نظر',
-          optionIndex: 0,
+          optionIndex: 3,
         ),
         RequestOptionItem(
           optionTitle: 'سن بنای مورد نظر',
-          optionIndex: 0,
+          optionIndex: 4,
         ),
         RequestOptionItem(
           optionTitle: 'طبقه مورد نظر',
-          optionIndex: 0,
+          optionIndex: 5,
         ),
         RequestOptionItem(
           optionTitle: 'تعداد خواب مورد نظر',
-          optionIndex: 0,
+          optionIndex: 6,
         ),
         RequestOptionItem(
           optionTitle: 'آسانسور مورد نظر',
-          optionIndex: 0,
+          optionIndex: 7,
         ),
         RequestOptionItem(
           optionTitle: 'انباری مورد نظر',
-          optionIndex: 0,
+          optionIndex: 8,
         ),
         RequestOptionItem(
           optionTitle: 'تعداد نفرات',
-          optionIndex: 0,
+          optionIndex: 9,
         ),
       ],
     );

@@ -1,29 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:khoneyab/provider/mainProvider.dart';
+import 'package:provider/provider.dart';
 
-class SelectMetricOption extends StatefulWidget {
+class SelectMortgageOption extends StatefulWidget {
   @override
-  _SelectMetricOptionState createState() => _SelectMetricOptionState();
+  _SelectMortgageOptionState createState() => _SelectMortgageOptionState();
 }
 
-class _SelectMetricOptionState extends State<SelectMetricOption> {
-// متغییر نوع دکمه حداقل یا حداکثر
+class _SelectMortgageOptionState extends State<SelectMortgageOption> {
+  // متغییر نوع دکمه حداقل یا حداکثر
   int bTnindex = 0;
 
   @override
   Widget build(BuildContext context) {
     List<Widget> metricItems = List<Widget>.from(
-        context.watch<MainProvider>().apartemandata.metric.map(
+        context.watch<MainProvider>().apartemandata.mortgagePrice.map(
               (e) => FlatButton(
                   child: Text(
-                    e.metricName,
+                    e.mortgagePriceTitle,
                     style: Theme.of(context).textTheme.headline3,
                   ),
                   onPressed: () {
                     // context
                     //     .read<MainProvider>()
-                    //     .changeMetricRequest(e, bTnindex);
+                    //     .changeMortgageRequest(e, bTnindex);
                     Navigator.of(context).pop();
                   }),
             ));
@@ -36,7 +36,7 @@ class _SelectMetricOptionState extends State<SelectMetricOption> {
           return Directionality(
             textDirection: TextDirection.rtl,
             child: AlertDialog(
-              title: Text('متراژ مورد نظر را انتخاب کنید'),
+              title: Text('ودیعه مورد نظر را انتخاب کنید'),
               content: SingleChildScrollView(
                 child: ListBody(children: metricItems),
               ),
@@ -54,7 +54,7 @@ class _SelectMetricOptionState extends State<SelectMetricOption> {
           padding: EdgeInsets.symmetric(horizontal: 20),
           children: [
             Text(
-              "متراژ مورد نظر خود را مشخص کنید",
+              "ودیعه مورد نظر خود را مشخص کنید",
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline3,
             ),
@@ -67,7 +67,7 @@ class _SelectMetricOptionState extends State<SelectMetricOption> {
                   Expanded(
                       flex: 2,
                       child: Text(
-                        "حداقل متراژ ",
+                        "حداقل مبلغ ودیعه ",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       )),
                   Expanded(
@@ -84,7 +84,7 @@ class _SelectMetricOptionState extends State<SelectMetricOption> {
                               // context
                               //     .watch<MainProvider>()
                               //     .currentApartemanData
-                              //     .metric[0],
+                              //     .mortgagePrice[0],
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20)),
                           height: 35,
@@ -107,7 +107,7 @@ class _SelectMetricOptionState extends State<SelectMetricOption> {
                   Expanded(
                       flex: 2,
                       child: Text(
-                        "حداکثر متراژ ",
+                        "حداکثر مبلغ ودیعه ",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       )),
                   Expanded(
@@ -124,7 +124,7 @@ class _SelectMetricOptionState extends State<SelectMetricOption> {
                               // context
                               //     .watch<MainProvider>()
                               //     .currentApartemanData
-                              //     .metric[1],
+                              //     .mortgagePrice[1],
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20)),
                           height: 35,

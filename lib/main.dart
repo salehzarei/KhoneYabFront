@@ -4,6 +4,7 @@ import 'package:khoneyab/checkLoginCode.dart';
 import 'package:khoneyab/homePage.dart';
 import 'package:khoneyab/login.dart';
 import 'package:khoneyab/pages/addRequestDetails.dart';
+import 'package:khoneyab/pages/chekRequestPage.dart';
 import 'package:khoneyab/pages/requestDetails.dart';
 import 'package:khoneyab/pages/userRequestList.dart';
 import 'package:provider/provider.dart';
@@ -33,14 +34,15 @@ void main() {
                           fontWeight: FontWeight.w600,
                           color: Colors.black))),
               debugShowCheckedModeBanner: false,
-              initialRoute: '/',
+              initialRoute: 'homepage',
               routes: {
                 '/': (context) => LoginPage(),
                 'homepage': (context) => HomePage(),
                 'checkLoginCode': (context) => CheckLoginCode(),
                 'UserRequestList': (context) => UserRequestList(),
                 'RequestDetails': (context) => RequestDetails(),
-                'addRequestDetails': (context) => AddRequestDetails()
+                'addRequestDetails': (context) => AddRequestDetails(),
+                'checkRequestPage': (context) => CheckRequestPage()
               },
             ),
           )));

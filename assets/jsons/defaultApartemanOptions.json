@@ -11,7 +11,20 @@
       {
         "locationID": "3",
         "locationName": "کلاهدوز"
+      },
+      {
+        "locationID": "4",
+        "locationName": "راهنمایی"
+      },
+      {
+        "locationID": "5",
+        "locationName": "فلسطین"
+      },
+      {
+        "locationID": "6",
+        "locationName": "کلاهدوز"
       }
+
     ],
     "eleveator": false,
     "storeroom": false,
