@@ -26,8 +26,8 @@ class RequestOptionItem extends StatelessWidget {
                       textAlign: TextAlign.right,
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold)),
+                          fontSize: 15.5,
+                          fontWeight: FontWeight.w600)),
                 ),
               ),
               Expanded(

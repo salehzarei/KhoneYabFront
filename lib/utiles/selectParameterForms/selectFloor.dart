@@ -2,24 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:khoneyab/provider/mainProvider.dart';
 import 'package:provider/provider.dart';
 
-class SelectMortgageOption extends StatefulWidget {
+class SelectBuildFloor extends StatefulWidget {
   @override
-  _SelectMortgageOptionState createState() => _SelectMortgageOptionState();
+  _SelectBuildFloorState createState() => _SelectBuildFloorState();
 }
 
-class _SelectMortgageOptionState extends State<SelectMortgageOption> {
+class _SelectBuildFloorState extends State<SelectBuildFloor> {
+ 
+ 
 // متغییر نوع دکمه حداقل یا حداکثر
   int bTnindex = 0;
 
   _makeButtonOption(btnData) {
     return FlatButton(
         child: Text(
-          btnData.mortgagePriceTitle,
+          btnData.buildFloorTitle,
           style: Theme.of(context).textTheme.headline3,
         ),
         onPressed: () {
           // ذخیره داده دکمه انتخاب شده در متغیر اطلاعات جاری درخواست
-          context.read<MainProvider>().currentApartemanData.mortgagePrice[bTnindex] =
+          context.read<MainProvider>().currentApartemanData.buildFloor[bTnindex] =
               btnData;
           setState(() {});
           Navigator.of(context).pop();
@@ -29,10 +31,10 @@ class _SelectMortgageOptionState extends State<SelectMortgageOption> {
   @override
   Widget build(BuildContext context) {
     // دریافت اطلاعات آپشن ها و ذخیره به صورت لیستی از دکمه ها
-    List<Widget> items = List<Widget>.from(context
+    List<Widget> _items = List<Widget>.from(context
         .watch<MainProvider>()
         .apartemandata
-        .mortgagePrice
+        .buildFloor
         .map((btnData) => _makeButtonOption(btnData)));
 
     Future<void> _showMyDialog() async {
@@ -43,9 +45,9 @@ class _SelectMortgageOptionState extends State<SelectMortgageOption> {
           return Directionality(
             textDirection: TextDirection.rtl,
             child: AlertDialog(
-              title: Text('ودیعه مورد نظر را مشخص کنید'),
+              title: Text('طبقه مورد نظر'),
               content: SingleChildScrollView(
-                child: ListBody(children: items),
+                child: ListBody(children: _items),
               ),
             ),
           );
@@ -61,7 +63,7 @@ class _SelectMortgageOptionState extends State<SelectMortgageOption> {
           padding: EdgeInsets.symmetric(horizontal: 20),
           children: [
             Text(
-              "میزان حداقل و حداکثر ودیعه را مشخص کنید",
+              "حداقل و حداکثر طبقه را مشخص کنید",
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline3,
             ),
@@ -74,7 +76,7 @@ class _SelectMortgageOptionState extends State<SelectMortgageOption> {
                   Expanded(
                       flex: 2,
                       child: Text(
-                        "حداقل مبلغ ودیعه",
+                        "حداقل طبقه ",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       )),
                   Expanded(
@@ -91,9 +93,9 @@ class _SelectMortgageOptionState extends State<SelectMortgageOption> {
                               context
                                   .watch<MainProvider>()
                                   .currentApartemanData
-                                  .mortgagePrice
+                                  .buildFloor
                                   .first
-                                  .mortgagePriceTitle,
+                                  .buildFloorTitle,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20)),
                           height: 35,
@@ -116,7 +118,7 @@ class _SelectMortgageOptionState extends State<SelectMortgageOption> {
                   Expanded(
                       flex: 2,
                       child: Text(
-                        "حداکثر مبلغ ودیعه",
+                        "حداکثر طبقه ",
                         style: TextStyle(fontWeight: FontWeight.bold),
                       )),
                   Expanded(
@@ -133,9 +135,9 @@ class _SelectMortgageOptionState extends State<SelectMortgageOption> {
                               context
                                   .watch<MainProvider>()
                                   .currentApartemanData
-                                  .mortgagePrice
+                                  .buildFloor
                                   .last
-                                  .mortgagePriceTitle,
+                                  .buildFloorTitle,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20)),
                           height: 35,

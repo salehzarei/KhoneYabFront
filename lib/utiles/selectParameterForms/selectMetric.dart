@@ -11,22 +11,29 @@ class _SelectMetricOptionState extends State<SelectMetricOption> {
 // متغییر نوع دکمه حداقل یا حداکثر
   int bTnindex = 0;
 
+  _makeButtonOption(btnData) {
+    return FlatButton(
+        child: Text(
+          btnData.metricName,
+          style: Theme.of(context).textTheme.headline3,
+        ),
+        onPressed: () {
+          // ذخیره داده دکمه انتخاب شده در متغیر اطلاعات جاری درخواست
+          context.read<MainProvider>().currentApartemanData.metric[bTnindex] =
+              btnData;
+          setState(() {});
+          Navigator.of(context).pop();
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
-    List<Widget> metricItems = List<Widget>.from(
-        context.watch<MainProvider>().apartemandata.metric.map(
-              (e) => FlatButton(
-                  child: Text(
-                    e.metricName,
-                    style: Theme.of(context).textTheme.headline3,
-                  ),
-                  onPressed: () {
-                    // context
-                    //     .read<MainProvider>()
-                    //     .changeMetricRequest(e, bTnindex);
-                    Navigator.of(context).pop();
-                  }),
-            ));
+    // دریافت اطلاعات آپشن ها و ذخیره به صورت لیستی از دکمه ها
+    List<Widget> metricItems = List<Widget>.from(context
+        .watch<MainProvider>()
+        .apartemandata
+        .metric
+        .map((btnData) => _makeButtonOption(btnData)));
 
     Future<void> _showMyDialog() async {
       return showDialog<void>(
@@ -80,11 +87,13 @@ class _SelectMetricOptionState extends State<SelectMetricOption> {
                           });
                         },
                         child: Container(
-                          child: Text("",
-                              // context
-                              //     .watch<MainProvider>()
-                              //     .currentApartemanData
-                              //     .metric[0],
+                          child: Text(
+                              context
+                                  .watch<MainProvider>()
+                                  .currentApartemanData
+                                  .metric
+                                  .first
+                                  .metricName,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20)),
                           height: 35,
@@ -120,11 +129,13 @@ class _SelectMetricOptionState extends State<SelectMetricOption> {
                           });
                         },
                         child: Container(
-                          child: Text("",
-                              // context
-                              //     .watch<MainProvider>()
-                              //     .currentApartemanData
-                              //     .metric[1],
+                          child: Text(
+                              context
+                                  .watch<MainProvider>()
+                                  .currentApartemanData
+                                  .metric
+                                  .last
+                                  .metricName,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20)),
                           height: 35,

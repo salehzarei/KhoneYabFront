@@ -33,8 +33,8 @@ class AddRequestDetails extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline3,
                   ),
                 ),
-                Expanded(flex: 8, child: Container()
-              //  RequestOptions()
+                Expanded(flex: 8, child:
+                RequestOptions()
                 ),
                 Align(
                   alignment: Alignment.topLeft,

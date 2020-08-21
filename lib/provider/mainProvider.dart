@@ -27,61 +27,151 @@ class MainProvider with ChangeNotifier {
     switch (_keyOfCurrent.key) {
       case 'buildAge':
         {
-          return Text(
-              'سن بنای مورد نظر بین ${_apartemandata.toJson().entries.toList().elementAt(index).value[0]}');
+          return Row(
+            children: [
+              Text('سن بنای مورد نظر : ',
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+              Text(
+                  '${currentApartemanData.buildAge.first.buildAgeTitle} و ${currentApartemanData.buildAge.last.buildAgeTitle}'),
+            ],
+          );
         }
         break;
 
       case 'buildFloor':
         {
-          return Text(
-              'طبقه مورد نظر ${_apartemandata.buildFloor[0].buildFloorTitle}');
+          return Row(
+            children: [
+              Text('طبقه مورد نظر : ',
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+              Text(
+                  '${currentApartemanData.buildFloor.first.buildFloorTitle} تا ${currentApartemanData.buildFloor.last.buildFloorTitle}'),
+            ],
+          );
         }
         break;
       case 'buildroom':
         {
-          return Text('تعداد خواب موردنظر');
+          return Row(
+            children: [
+              Text('تعداد خواب موردنظر : ',
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+              Text(
+                  ' ${currentApartemanData.buildroom.first.buildRoomTitle} تا ${currentApartemanData.buildroom.last.buildRoomTitle}'),
+            ],
+          );
         }
         break;
       case 'eleveator':
         {
-          return Text('آسانسور');
+          return Row(
+            children: [
+              Text('آسانسور : ',
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+              Text(
+                  '${currentApartemanData.eleveator ? 'داشته باشد' : 'نداشته باشد'}'),
+            ],
+          );
         }
         break;
       case 'location':
         {
-          return Text('منطقه مورد نظر');
+          return Row(
+            children: [
+              Text('منطقه مورد نظر : ',
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+              Row(
+                children: currentApartemanData.location
+                    .map((text) => Text(
+                          text.locationName + ",",
+                          style: TextStyle(color: Colors.black),
+                        ))
+                    .toList(),
+              ),
+            ],
+          );
         }
         break;
       case 'metric':
         {
-          return Text(
-              'متراژ مورد نظر ${_apartemandata.metric[int.parse(_keyOfCurrent.value[0])].metricName} الی ${_apartemandata.metric[int.parse(_keyOfCurrent.value[1])].metricName}');
+          return Row(
+            children: [
+              Text('متراژ مورد نظر : ',
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+              Text(
+                  ' ${currentApartemanData.metric.first.metricName} الی ${currentApartemanData.metric.last.metricName}'),
+            ],
+          );
         }
         break;
       case 'mortgagePrice':
         {
-          return Text('ودیعه مورد نظر');
+          return Row(
+            children: [
+              Text('ودیعه مورد نظر  : ',
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+              Text(
+                  '${currentApartemanData.mortgagePrice.first.mortgagePriceTitle} الی ${currentApartemanData.mortgagePrice.last.mortgagePriceTitle} '),
+            ],
+          );
         }
         break;
       case 'parking':
         {
-          return Text('پارکینگ');
+          return Row(
+            children: [
+              Text('پارکینگ : ',
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+              Text(
+                  '${currentApartemanData.parking ? 'داشته باشد' : 'نداشته باشد'}'),
+            ],
+          );
         }
         break;
       case 'storeroom':
         {
-          return Text('انباری');
+          return Row(
+            children: [
+              Text('انباری : ',
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+              Text(
+                  '${currentApartemanData.storeroom ? 'داشته باشد' : 'نداشته باشد'}'),
+            ],
+          );
         }
         break;
       case 'rentPrice':
         {
-          return Text('اجاره مورد نظر');
+          return Row(
+            children: [
+              Text('اجاره مورد نظر  : ',
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+              Text(
+                  ' ${currentApartemanData.rentPrice.first.rentPriceTitle} الی ${currentApartemanData.rentPrice.last.rentPriceTitle}'),
+            ],
+          );
         }
         break;
       case 'persons':
         {
-          return Text('تعداد نفرات');
+          return Row(
+            children: [
+              Text('تعداد نفرات : ',
+                  style: TextStyle(
+                      color: Colors.blueGrey, fontWeight: FontWeight.bold)),
+              Text(' ${currentApartemanData.persons.first.personsTitle}'),
+            ],
+          );
         }
         break;
 
@@ -91,49 +181,30 @@ class MainProvider with ChangeNotifier {
         }
         break;
     }
-
-    // apartemandata.toJson().forEach((key, value) {
-    //   if (key == _keyOfCurrent) {
-    //     print(apartemandata.toJson().entries.toList().elementAt(index).value);
-    //   }
-    // });
-
-    // Map<String, Widget> titleOfOptions = {
-    //   'buildAge': Text('سن بنای مورد نظر'),
-    //   'buildFloor': Text('طبقه مورد نظر'),
-    //   'buildroom': Text('تعداد خواب موردنظر'),
-    //   'eleveator': Text('آسانسور'),
-    //   'location': Text('منطقه مورد نظر'),
-    //   'metric': Text('متراژ مورد نظر'),
-    //   'mortgagePrice': Text('ودیعه مورد نظر'),
-    //   'parking': Text('پارکینگ'),
-    //   'storeroom': Text('انباری'),
-    //   'rentPrice': Text('اجاره مورد نظر'),
-    //   'persons': Text('تعداد نفرات')
-    // };
   }
 
   makeNewApartemanData() {
     _currentApartemanRequest = ApartemanRentModel(
-      location: [Location(locationId: '111' , locationName: 'صالح آباید')]
+      userId: '0',
+      requestId: '0',
+      eleveator: apartemandata.eleveator,
+      parking: apartemandata.parking,
+      storeroom: apartemandata.storeroom,
+      persons: apartemandata.persons,
+      location: [apartemandata.location.first],
+      metric: [apartemandata.metric.first, apartemandata.metric.last],
+      buildAge: [apartemandata.buildAge.first, apartemandata.buildAge.last],
+      buildFloor: [
+        apartemandata.buildFloor.first,
+        apartemandata.buildFloor.last
+      ],
+      buildroom: [apartemandata.buildroom.first, apartemandata.buildroom.first],
+      rentPrice: [apartemandata.rentPrice.first, apartemandata.rentPrice.last],
+      mortgagePrice: [
+        apartemandata.mortgagePrice.first,
+        apartemandata.mortgagePrice.last
+      ],
     );
-        
-    print(apartemandata.location.first.locationName);
-    print(_currentApartemanRequest.location.first.locationName);
-
-    // userId: '0000',
-    // requestId: '01',
-    // buildAge: ['0', '0'],
-    // buildFloor: ['0', '0'],
-    // buildroom: ['0', '0'],
-    // eleveator: true,
-    // location: ['1', '2', '3'],
-    // metric: ['0', '5'],
-    // mortgagePrice: ['0', '1'],
-    // parking: true,
-    // storeroom: true,
-    // rentPrice: ['0', '1'],
-    // persons: '2');
   }
 
   // void changeMetricRequest(Metric data, int index) {

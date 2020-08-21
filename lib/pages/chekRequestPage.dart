@@ -43,7 +43,7 @@ class CheckRequestPage extends StatelessWidget {
                 Expanded(
                     flex: 13,
                     child: ListView.builder(
-                        itemCount: _currentOptions.toJson().length - 2,
+                        itemCount: _currentOptions.toJson().length,
                         itemBuilder: (context, index) {
                           return Padding(
                               padding: const EdgeInsets.all(8.0),
