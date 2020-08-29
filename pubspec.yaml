@@ -32,13 +32,9 @@ dependencies:
   marquee: ^1.5.2
   smooth_star_rating: ^1.1.1
   url_launcher: ^5.5.0
-<<<<<<< HEAD
- 
-=======
   provider: ^4.3.1
   font_awesome_flutter: ^8.8.1
   
->>>>>>> fdd4d21f08574741c1513092719a92d2e55d2146
 
 dev_dependencies:
   flutter_test:
