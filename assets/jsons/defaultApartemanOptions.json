@@ -1,0 +1,211 @@
+{
+    "location": [
+      {
+        "locationID": "1",
+        "locationName": "الهیه"
+      },
+      {
+        "locationID": "2",
+        "locationName": "احمدآباد"
+      },
+      {
+        "locationID": "3",
+        "locationName": "کلاهدوز"
+      },
+      {
+        "locationID": "4",
+        "locationName": "راهنمایی"
+      },
+      {
+        "locationID": "5",
+        "locationName": "فلسطین"
+      },
+      {
+        "locationID": "6",
+        "locationName": "کلاهدوز"
+      }
+
+    ],
+    "eleveator": false,
+    "storeroom": false,
+    "parking": false,
+    "metric": [
+      {
+        "metricID": "1",
+        "metricName": "کمتر از 30 متر",
+        "metricValue": 30
+      },
+      {
+        "metricID": "2",
+        "metricName": "حداقل 50 متر",
+        "metricValue": 50
+      },
+      {
+        "metricID": "3",
+        "metricName": "حداقل 60 متر",
+        "metricValue": 60
+      },
+      {
+        "metricID": "4",
+        "metricName": "حداقل 70 متر",
+        "metricValue": 70
+      },
+      {
+        "metricID": "5",
+        "metricName": "حداقل 80 متر",
+        "metricValue": 80
+      },
+      {
+        "metricID": "6",
+        "metricName": "حداقل 100 متر",
+        "metricValue": 100
+      }
+    ],
+    "mortgagePrice": [
+      {
+        "mortgagePriceID": "1",
+        "mortgagePriceTitle": "بدون ودیعه",
+        "mortgagePriceValuen": 0
+      },
+      {
+        "mortgagePriceID": "2",
+        "mortgagePriceTitle": "5 میلیون",
+        "mortgagePriceValuen": 5
+      },
+      {
+        "mortgagePriceID": "3",
+        "mortgagePriceTitle": "10 میلیون",
+        "mortgagePriceValuen": 10
+      },
+      {
+        "mortgagePriceID": "4",
+        "mortgagePriceTitle": "15 میلیون",
+        "mortgagePriceValuen": 15
+      },
+      {
+        "mortgagePriceID": "5",
+        "mortgagePriceTitle": "20 میلیون",
+        "mortgagePriceValuen": 20
+      }
+    ],
+    "rentPrice": [
+      {
+        "rentPriceID": "1",
+        "rentPriceTitle": "بدون اجاره",
+        "rentPriceValue": 0
+      },
+      {
+        "rentPriceID": "2",
+        "rentPriceTitle": "500 هزارتومان",
+        "rentPriceValue": 0.5
+      },
+      {
+        "rentPriceID": "3",
+        "rentPriceTitle": "1 میلیون تومان",
+        "rentPriceValue": 1
+      },
+      {
+        "rentPriceID": "4",
+        "rentPriceTitle": "1.5 میلیون تومان",
+        "rentPriceValue": 1.5
+      },
+      {
+        "rentPriceID": "5",
+        "rentPriceTitle": "2 میلیون تومان",
+        "rentPriceValue": 2
+      },
+      {
+        "rentPriceID": "6",
+        "rentPriceTitle": "2.5 میلیون تومان",
+        "rentPriceValue": 2.5
+      }
+    ],
+    "buildAge": [
+      {
+        "buildAgeID": "1",
+        "buildAgeTitle": "صفر و نوساز",
+        "buildAgeValue": 0
+      },
+      {
+        "buildAgeID": "2",
+        "buildAgeTitle": "بازسازی شده",
+        "buildAgeValue": 100
+      },
+      {
+        "buildAgeID": "3",
+        "buildAgeTitle": "یکسال ساخت",
+        "buildAgeValue": 1
+      },
+      {
+        "buildAgeID": "4",
+        "buildAgeTitle": "دوسال ساخت",
+        "buildAgeValue": 2
+      }
+    ],
+    "buildFloor": [
+      {
+        "buildFloorID": "1",
+        "buildFloorTitle": "زیرزمین",
+        "buildFloorValue": -1
+      },
+      {
+        "buildFloorID": "2",
+        "buildFloorTitle": "همکف",
+        "buildFloorValue": 0
+      },
+      {
+        "buildFloorID": "3",
+        "buildFloorTitle": "طبقه اول",
+        "buildFloorValue": 1
+      },
+      {
+        "buildFloorID": "4",
+        "buildFloorTitle": "طبقه دوم",
+        "buildFloorValue": 2
+      }
+    ],
+    "buildroom": [
+      {
+        "buildRoomID": "1",
+        "buildRoomTitle": "بدون خواب",
+        "buildRoomValue": 0
+      },
+      {
+        "buildRoomID": "2",
+        "buildRoomTitle": "یک خواب",
+        "buildRoomValue": 1
+      },
+      {
+        "buildRoomID": "3",
+        "buildRoomTitle": "دو خواب",
+        "buildRoomValue": 2
+      },
+      {
+        "buildRoomID": "4",
+        "buildRoomTitle": "سه خواب",
+        "buildRoomValue": 3
+      }
+    ],
+    "persons": [
+      {
+        "personsID": "1",
+        "personsTitle": "مجرد",
+        "personsValue": "0"
+      },
+      {
+        "personsID": "2",
+        "personsTitle": "زوج بدون فرزند",
+        "personsValue": "1"
+      },
+      {
+        "personsID": "3",
+        "personsTitle": "زوج با یک فرزند",
+        "personsValue": "2"
+      },
+      {
+        "personsID": "4",
+        "personsTitle": "زوج با دو فرزند",
+        "personsValue": "3"
+      }
+    ]
+  }

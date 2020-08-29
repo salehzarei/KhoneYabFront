@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:khoneyab/widgets/buttonMenu.dart';
+import 'package:provider/provider.dart';
+
+import 'provider/mainProvider.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -26,6 +29,7 @@ class _HomePageState extends State<HomePage> {
         onTap: (int index) {
           setState(() {
             _currentIndex = index;
+            context.read<MainProvider>().loadApartemanOption();
           });
         },
         items: [
