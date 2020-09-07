@@ -21,9 +21,7 @@ class _SelectBuildFloorState extends State<SelectBuildFloor> {
         ),
         onPressed: () {
           // ذخیره داده دکمه انتخاب شده در متغیر اطلاعات جاری درخواست
-          context.read<MainProvider>().currentApartemanData.buildFloor[bTnindex] =
-              btnData;
-          setState(() {});
+          context.read<MainProvider>().setFloor(bTnindex, btnData);
           Navigator.of(context).pop();
         });
   }

@@ -33,7 +33,7 @@ class AddRequestDetails extends StatelessWidget {
                     style: Theme.of(context).textTheme.headline3,
                   ),
                 ),
-                Expanded(flex: 8, child:
+                Expanded(flex: 20, child:
                 RequestOptions()
                 ),
                 Align(
@@ -63,6 +63,7 @@ class RequestOptions extends StatelessWidget {
         RequestOptionItem(
           optionTitle: 'منطقه مورد نظر ملک',
           optionIndex: 0,
+          
         ),
         RequestOptionItem(
           optionTitle: 'متراژ مورد نظر',
@@ -89,16 +90,20 @@ class RequestOptions extends StatelessWidget {
           optionIndex: 6,
         ),
         RequestOptionItem(
-          optionTitle: 'آسانسور مورد نظر',
+          optionTitle: 'تعداد نفرات',
           optionIndex: 7,
         ),
         RequestOptionItem(
-          optionTitle: 'انباری مورد نظر',
+          optionTitle: 'آسانسور',
           optionIndex: 8,
         ),
         RequestOptionItem(
-          optionTitle: 'تعداد نفرات',
+          optionTitle: 'انباری',
           optionIndex: 9,
+        ),
+        RequestOptionItem(
+          optionTitle: 'پارکینگ',
+          optionIndex: 10,
         ),
       ],
     );

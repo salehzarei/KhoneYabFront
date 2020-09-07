@@ -19,9 +19,8 @@ class _SelectMetricOptionState extends State<SelectMetricOption> {
         ),
         onPressed: () {
           // ذخیره داده دکمه انتخاب شده در متغیر اطلاعات جاری درخواست
-          context.read<MainProvider>().currentApartemanData.metric[bTnindex] =
-              btnData;
-          setState(() {});
+          Provider.of<MainProvider>(context, listen: false)
+              .setMetricItem(bTnindex, btnData);
           Navigator.of(context).pop();
         });
   }

@@ -20,9 +20,7 @@ class _SelectBuildAgeState extends State<SelectBuildAge> {
         ),
         onPressed: () {
           // ذخیره داده دکمه انتخاب شده در متغیر اطلاعات جاری درخواست
-          context.read<MainProvider>().currentApartemanData.buildAge[bTnindex] =
-              btnData;
-          setState(() {});
+          context.read<MainProvider>().setAge(bTnindex, btnData);
           Navigator.of(context).pop();
         });
   }

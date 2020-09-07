@@ -20,9 +20,7 @@ class _SelectRentPriceState extends State<SelectRentPrice> {
         ),
         onPressed: () {
           // ذخیره داده دکمه انتخاب شده در متغیر اطلاعات جاری درخواست
-          context.read<MainProvider>().currentApartemanData.rentPrice[bTnindex] =
-              btnData;
-          setState(() {});
+          context.read<MainProvider>().setRent(bTnindex, btnData);
           Navigator.of(context).pop();
         });
   }

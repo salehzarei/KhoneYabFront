@@ -16,8 +16,7 @@ class CheckRequestPage extends StatelessWidget {
                 FontAwesomeIcons.edit,
                 color: Colors.grey,
               ),
-              onPressed: () =>
-                  Navigator.pushNamed(context, 'addRequestDetails')),
+              onPressed: () => Navigator.pop(context)),
           title: Text(
             "بررسی نهایی درخواست",
             style: Theme.of(context).textTheme.headline1,
@@ -48,10 +47,29 @@ class CheckRequestPage extends StatelessWidget {
                         itemBuilder: (context, index) {
                           return Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: context
+                              child: Text(context
                                   .watch<MainProvider>()
-                                  .optionShowDes(index));
-                        }))
+                                  .optionShowDes(index)
+                                  .toString()));
+                        })),
+                Expanded(
+                  flex: 5,
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: RaisedButton(
+                      onPressed: () => context
+                          .read<MainProvider>()
+                          .sendRequestToServer()
+                          .whenComplete(() =>
+                              Navigator.pushNamed(context, 'homepage')),
+                      color: Theme.of(context).buttonColor,
+                      child: Text(
+                        "ارسال درخواست",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

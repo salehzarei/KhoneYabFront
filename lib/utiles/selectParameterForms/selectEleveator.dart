@@ -7,14 +7,11 @@ class SelectEleveator extends StatefulWidget {
   _SelectEleveatorState createState() => _SelectEleveatorState();
 }
 
-bool _bTnState = false;
-
 class _SelectEleveatorState extends State<SelectEleveator> {
   @override
   Widget build(BuildContext context) {
-    // دریافت اطلاعات آپشن ها و ذخیره به صورت لیستی از دکمه ها
-    // bool _bTnState =
-
+    bool _bTnState =
+        context.watch<MainProvider>().currentApartemanData.eleveator;
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Padding(
@@ -44,14 +41,7 @@ class _SelectEleveatorState extends State<SelectEleveator> {
                       child: Checkbox(
                           value: _bTnState,
                           onChanged: (value) {
-                            context
-                                .read<MainProvider>()
-                                .currentApartemanData
-                                .eleveator = _bTnState;
-
-                            setState(() {
-                              _bTnState = value;
-                            });
+                            context.read<MainProvider>().setEleveator = value;
                             Navigator.of(context).pop();
                           }))
                 ],

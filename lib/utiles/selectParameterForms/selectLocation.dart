@@ -65,6 +65,9 @@ class _SelectLocationState extends State<SelectLocation> {
         setState(() {
           _stateList[index] = value;
         });
+
+        Provider.of<MainProvider>(context, listen: false).stateList = _stateList ;
+            
       },
     );
   }
@@ -73,20 +76,11 @@ class _SelectLocationState extends State<SelectLocation> {
   void initState() {
     super.initState();
     _stateList = Provider.of<MainProvider>(context, listen: false)
-        .apartemandata
-        .location
-        .map((e) => e.locationName.isEmpty)
-        .toList();
+        .locatationStateList();
   }
 
   @override
   Widget build(BuildContext context) {
-    // print(_stateList);
-    print(Provider.value(
-      value: _stateList,
-      updateShouldNotify: (oldValue, newValue) => true,
-    ));
-
     _items = Provider.of<MainProvider>(context, listen: false)
         .apartemandata
         .location;

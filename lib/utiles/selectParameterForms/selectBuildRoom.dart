@@ -20,9 +20,7 @@ class _SelectBuildRoomState extends State<SelectBuildRoom> {
         ),
         onPressed: () {
           // ذخیره داده دکمه انتخاب شده در متغیر اطلاعات جاری درخواست
-          context.read<MainProvider>().currentApartemanData.buildroom[bTnindex] =
-              btnData;
-          setState(() {});
+          context.read<MainProvider>().setRoom(bTnindex, btnData);
           Navigator.of(context).pop();
         });
   }

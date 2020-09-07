@@ -53,8 +53,14 @@ class RequestOptionItem extends StatelessWidget {
                                     )),
                                   )),
                           child: Text(
-                            'انتخاب',
+                            context
+                                .watch<MainProvider>()
+                                .optionShowDes(optionIndex)
+                                .toString(),
                             textAlign: TextAlign.right,
+                            overflow: TextOverflow.clip,
+                            softWrap: true,
+                            maxLines: 1,
                             style: TextStyle(
                                 color: Colors.grey.shade700, fontSize: 12),
                           ))))

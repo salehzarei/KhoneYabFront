@@ -22,13 +22,13 @@
       },
       {
         "locationID": "6",
-        "locationName": "کلاهدوز"
+        "locationName": "سازمان آب"
       }
 
     ],
-    "eleveator": false,
-    "storeroom": false,
-    "parking": false,
+    "eleveator": true,
+    "storeroom": true,
+    "parking": true,
     "metric": [
       {
         "metricID": "1",

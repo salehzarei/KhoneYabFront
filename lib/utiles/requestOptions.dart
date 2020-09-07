@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:khoneyab/utiles/selectParameterForms/selectBuildAge.dart';
-import 'package:khoneyab/utiles/selectParameterForms/selectBuildRoom.dart';
-import 'package:khoneyab/utiles/selectParameterForms/selectEleveator.dart';
-import 'package:khoneyab/utiles/selectParameterForms/selectFloor.dart';
-import 'package:khoneyab/utiles/selectParameterForms/selectMortgage.dart';
-import 'package:khoneyab/utiles/selectParameterForms/selectRentPrice.dart';
+import 'package:khoneyab/utiles/selectParameterForms/selectParking.dart';
+import 'selectParameterForms/selectBuildAge.dart';
+import 'selectParameterForms/selectBuildRoom.dart';
+import 'selectParameterForms/selectEleveator.dart';
+import 'selectParameterForms/selectFloor.dart';
+import 'selectParameterForms/selectMortgage.dart';
+import 'selectParameterForms/selectRentPrice.dart';
 import 'selectParameterForms/selectLocation.dart';
 import 'selectParameterForms/selectMetric.dart';
+import 'selectParameterForms/selectPersons.dart';
+import 'selectParameterForms/selectStoreRoom.dart';
 
 class RequestOptionList extends StatelessWidget {
   final int optionindex;
-  
 
   RequestOptionList({this.optionindex});
   @override
@@ -23,7 +25,10 @@ class RequestOptionList extends StatelessWidget {
       SelectBuildAge(),
       SelectBuildFloor(),
       SelectBuildRoom(),
-      SelectEleveator()
+      SelectPersons(),
+      SelectEleveator(),
+      SelectStoreRoom(),
+      SelectParking()
     ];
     return requestOptionList[optionindex];
   }

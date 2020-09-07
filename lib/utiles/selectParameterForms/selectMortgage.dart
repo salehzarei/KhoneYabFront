@@ -19,9 +19,7 @@ class _SelectMortgageOptionState extends State<SelectMortgageOption> {
         ),
         onPressed: () {
           // ذخیره داده دکمه انتخاب شده در متغیر اطلاعات جاری درخواست
-          context.read<MainProvider>().currentApartemanData.mortgagePrice[bTnindex] =
-              btnData;
-          setState(() {});
+          context.read<MainProvider>().setMortgage(bTnindex, btnData);
           Navigator.of(context).pop();
         });
   }
