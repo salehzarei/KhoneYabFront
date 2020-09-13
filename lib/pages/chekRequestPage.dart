@@ -59,9 +59,9 @@ class CheckRequestPage extends StatelessWidget {
                     child: RaisedButton(
                       onPressed: () => context
                           .read<MainProvider>()
-                          .sendRequestToServer()
-                          .whenComplete(() =>
-                              Navigator.pushNamed(context, 'homepage')),
+                          .sendRequestFromFile()
+                          .whenComplete(
+                              () => Navigator.pushNamed(context, 'homepage')),
                       color: Theme.of(context).buttonColor,
                       child: Text(
                         "ارسال درخواست",

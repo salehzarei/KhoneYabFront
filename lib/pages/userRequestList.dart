@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:khoneyab/models/defaultApartemanOptionsModel.dart';
+import 'package:khoneyab/provider/mainProvider.dart';
 import 'package:marquee/marquee.dart';
+import 'package:provider/provider.dart';
 
 class UserRequestList extends StatefulWidget {
   @override
@@ -9,6 +12,7 @@ class UserRequestList extends StatefulWidget {
 class _UserRequestListState extends State<UserRequestList> {
   @override
   Widget build(BuildContext context) {
+    Provider.of<MainProvider>(context, listen: false).readRequestFromFile();
     double _pagewidth = MediaQuery.of(context).size.width;
     double _pageheight = MediaQuery.of(context).size.height;
     return Directionality(
